@@ -1,6 +1,11 @@
 <div class="row">
 	<div class="col-xs-10">
-		<app-shopping-edit></app-shopping-edit>
+		<app-shopping-edit
+			(ingredientAdded)="onIngredientAdded($event)"></app-shopping-edit>
+			<!--
+			 ingredientAdded: escuta do shopping-edit
+			 onIngredientAdded recebe objeto com nameInput e amountInput.	
+			 -->
 		<hr>
 		<ul class="list-group">
 			<a

@@ -2,13 +2,15 @@
 	<div class="col-md-5">
 		<app-recipe-list
 			(recipeWasSelected)="selectedRecipe = $event"></app-recipe-list>
-			<!-- escuta do recipe-list -->
+			<!-- escuta do recipe-list e recebe a receita selecionada no recipe-item -->
 	</div>
 	<div class="col-md-7">
 		<app-recipe-detail
 			*ngIf="selectedRecipe; else infoText"
 			[recipe]="selectedRecipe"></app-recipe-detail>
-
+			<!-- 
+				Caso selectedRecipe true app-recipe-detail aparece, senão mostra texto. 
+				[recipe]: bind com recipe-detail. -->
 		<ng-template #infoText>
 			<p>Por favor escolha uma receita!</p>
 		</ng-template>
